@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.0;netstandard2.0</TargetFrameworks>
     <Configurations>DBG_WIN_V4;DBG_WIN_V3;REL_WIN_V3;REL_WIN_V4;REL_LIN_3;REL_LIN_4;DBG_LIN_3;DBG_LIN_4</Configurations>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG_WIN_V4|AnyCPU'">
@@ -33,6 +34,7 @@
     <DefineConstants>TRACE;WIN;CSV3;REL_V3;NETCOREAPP2_0;REL_WIN_V3;NETCOREAPP2_0</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\netstandard2.0\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='REL_LIN_3|AnyCPU'">
@@ -52,5 +54,13 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>false</Optimize>
   </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo &quot;YOU NEED TO GET THE CORRECT DLL/.SO INTO THE OUTPUT FOLDER!!!&quot;" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo &quot;YOU NEED TO GET THE CORRECT DLL/.SO INTO THE OUTPUT FOLDER!!!&quot;" />
+  </Target>
 
 </Project>

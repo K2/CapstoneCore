@@ -76,6 +76,8 @@ namespace CapstoneCore
         {
             public cs_insn insn;
             public cs_detail detail;
+
+            public override string ToString() => $"{insn.address:X} [{insn.size}] {insn.mnemonic} {insn.operands} ; 0x{insn.bytes[0]:x} 0x{insn.bytes[1]:x} 0x{insn.bytes[2]:x} 0x{insn.bytes[3]:x}";
         }
         [StructLayout(LayoutKind.Sequential)]
         public struct cs_insn
@@ -90,6 +92,8 @@ namespace CapstoneCore
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 160)]
             public string operands;
             public IntPtr detail;
+
+            public override string ToString() => $"0x{address:X} [{size}] {mnemonic} {operands} ; 0x{bytes[0]:x} 0x{bytes[1]:x} 0x{bytes[2]:x} 0x{bytes[3]:x}";
         }
         /// Partial, only x86 dependent & architecture-independent internal data
         [StructLayout(LayoutKind.Sequential)]
@@ -104,8 +108,8 @@ namespace CapstoneCore
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
             public byte[] groups;
             public byte groups_count;
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(cs_x86Marshaler))]
-            public cs_x86 x86;
+            // , MarshalTypeRef = typeof(cs_x86Marshaler)
+            public native_cs_x86 x86;
         }
 
 
