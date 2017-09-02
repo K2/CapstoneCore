@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Configurations>DBG_WIN_V4;DBG_WIN_V3;REL_WIN_V3;REL_WIN_V4;REL_LIN_3;REL_LIN_4;DBG_LIN_3;DBG_LIN_4</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG_WIN_V4|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE;WIN;CSV4;DEBUG_V4;NETCOREAPP2_0;DBG_WIN_V4;NETCOREAPP2_0</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG_LIN_4|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE;LIN;CSV4;DEBUG_V4;NETCOREAPP2_0;DBG_LIN_4;NETCOREAPP2_0;DBG_LIN_4;NETCOREAPP2_0</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='REL_WIN_V4|AnyCPU'">
+    <DefineConstants>TRACE;WIN;CSV4;REL_V4;NETCOREAPP2_0;REL_WIN_V4;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='REL_LIN_4|AnyCPU'">
+    <DefineConstants>TRACE;LIN;CSV4;REL_V4;NETCOREAPP2_0;REL_LIN_4;NETCOREAPP2_0;REL_LIN_4;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='REL_WIN_V3|AnyCPU'">
+    <DefineConstants>TRACE;WIN;CSV3;REL_V3;NETCOREAPP2_0;REL_WIN_V3;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='REL_LIN_3|AnyCPU'">
+    <DefineConstants>TRACE;LIN;CSV3;REL_V3;NETCOREAPP2_0;REL_LIN_3;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG_WIN_V3|AnyCPU'">
+    <DefineConstants>TRACE;WIN;CSV3;DEBUG_V3;NETCOREAPP2_0;DBG_WIN_V3;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG_LIN_3|AnyCPU'">
+    <DefineConstants>TRACE;LIN;CSV3;DEBUG_V3;NETCOREAPP2_0;DBG_LIN_3;NETCOREAPP2_0;DBG_LIN_3;NETCOREAPP2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+</Project>
